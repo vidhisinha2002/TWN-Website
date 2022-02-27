@@ -1,0 +1,111 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/admin_dashboard"><i class="fas fa-angle-double-left"></i> Back to dashboard</a>
+                </div>
+            </div>
+
+            <div class="form-title text-center">
+                <h2 class="text-dark">New service provider</h2>
+                <span class="text-light">Use the below form to create a new service provider</span>
+            </div>
+
+            <!-- add user form -->
+            <!-- form handling -->
+            <form action="/api/serviceprovider" method="POST" id="add_user" enctype="multipart/form-data">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Vendor name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="vendor_name" value="" placeholder="Name of service provider" required>
+                    </div>
+                    <div class="form-group">
+
+                        <label for="Email" class="text-light">Services</label>
+                        <br>
+                        <input type="Checkbox" name="service" value="GENERAL PREMIUM SERVICE : ( BETWEEN 150 CC – 250 CC )">GENERAL PREMIUM SERVICE : ( BETWEEN 150 CC – 250 CC )
+                        <br>
+                        <input type="Checkbox" name="service2" value="GENERAL SERVICE : (BELOW 150 CC )">GENERAL SERVICE : (BELOW 150 CC )
+                        <br>
+                        <input type="Checkbox" name="service3" value="GENERAL PRO SERVICE : ( BETWEEN 250CC – 350CC )">GENERAL PRO SERVICE : ( BETWEEN 250CC – 350CC )
+                        <br>
+                        <input type="Checkbox" name="service4" value="ENGINE OIL CHANGE">ENGINE OIL CHANGE
+                        <br>
+                        <input type="Checkbox" name="service1" value="TYRE PUNCTURE">TYRE PUNCTURE
+                        <br>
+                        <input type="Checkbox" name="service5" value="ENGINE SERVICE">ENGINE SERVICE
+                        <br>
+                        <input type="Checkbox" name="service6" value="PAINTING">PAINTING
+
+                        <!-- <input type="text" name="service" value="" placeholder="Service provided" required> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Address</label>
+                        <input type="text" name="address" value="" placeholder="Service provided" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Timings</label>
+                        <input type="text" name="timings" value="" placeholder="Details of service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Benificiary name</label>
+                        <input type="text" name="benificiary_name" value="" placeholder="Details of service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Bank address</label>
+                        <input type="text" name="bank_address" value="" placeholder="Details of service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Bank Account</label>
+                        <input type="text" name="bank_account" value="" placeholder="Details of service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-1" class="text-light">Account Type</label>
+                        <input type="text" name="account_type" value="" placeholder="Details of service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-1" class="text-light">IFSC code</label>
+                        <input type="text" name="ifsc_code" value="" placeholder="Details of service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Aadhar card Images</label>
+                        <input type="file" name="aadhar_avatar" multiple />
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Driving license Images</label>
+                        <input type="file" name="license_avatar" multiple />
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Technician Images</label>
+                        <input type="file" name="technician_avatar" multiple />
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Garage Images</label>
+                        <input type="file" name="garage_avatar" multiple />
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Electricity bill Image</label>
+                        <input type="file" name="electricity_avatar" />
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Rental agreement Image</label>
+                        <input type="file" name="agreement_avatar" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

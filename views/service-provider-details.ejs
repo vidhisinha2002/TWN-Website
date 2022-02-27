@@ -1,0 +1,196 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+
+
+    <!--
+        ==================================================
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>Details</h2>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i> Home &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">Service</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+==================================================
+    Service Page Section  Start
+================================================== -->
+
+    <!--
+==================================================
+    Works Section Start
+================================================== -->
+
+
+
+    <section class="company-description">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
+                    <img src="upload/<%= user.image_technician[0] %>" style="border-radius:50%; width: 200px;
+  height: 200px;display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;border: 2px solid #041c3c;" alt="" class="img-fluid"></img><br><br>
+                    <h3 STYLE="font-size:200%;  text-align: center;" class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">
+                        <%= user.vendor_name %>
+                    </h3>
+                    <div>
+                        <h1 style=" text-align: center; font-size: medium;" class="title wow fadeInDown" data-wow-delay=".3s">
+                            twn id:
+                            <%= user._id %>
+                        </h1>
+                    </div>
+                    <div STYLE="  text-align: center;">
+
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div><br>
+
+
+                </div>
+                <div class="col-md-6">
+                    <div class="block">
+
+                        <p class="wow fadeInUp" data-wow-delay=".5s" data-wow-duration="500ms">
+
+                            <h3 style="font-size:150%;" class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms"><i class="ion-person"></i> ABOUT :</h3> Shirlington Shell Service Center was established back in 1972 and has been proudly serving Arlington and the surrounding area ever since. This shop features a very experienced and well
+                            trained team including 2 ASE Certified Masters. They are equipped with the state of the art tools and diagnostic equipment necessary for today's modern vehicles.
+                            <BR>
+                            <BR>
+
+                            <h3 style="font-size:150%;" class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms"><i class="ion-ios-location"></i> ADDRESS :</h3>
+                            <p style="color:black;"> <b> <%= user.address %></b> </p>
+                            <h3 style="font-size:150%;" class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms"><i class="ion-map"></i> DISTANCE :</h3>
+                            <p style="color:black;"><b> 5.9 Km </b></p>
+
+                            <h3 style="font-size:150%;" class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms"><i class="ion-ios-clock"></i> TIMINGS :
+                                <p style="color:black;"> <br> <b>Opens at</b>
+                                    <%= user.timing %>
+                                </p>
+                            </h3>
+
+
+
+
+
+                        </p>
+
+
+                        <br><br><br>
+                        <button class="btnn" onclick="document.getElementById('id01').style.display='block'">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <h3 class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms" style="text-align: center;">Customers Ratings</h3>
+    <br>
+
+
+    <br>
+    <div class="vidhi owl-carousel owl-theme">
+        <div class="item" style="background:#fff;">
+
+            <div class="text-co" style="background:#fff;">
+                <h4 style="background:#fff;text-align:center;"> <br> <b>SAHIL BANTIA</b><br> </h4>
+                <div style="text-align:center;"><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span></div>
+                <div style="text-align:center;">
+                    <h5> Service was done neatly and it was worth paying the amount then at any other service center </h5>
+                </div>
+
+
+                &emsp;
+            </div>
+        </div>
+        <div class="item" style="background:#fff;">
+
+            <div class="text-co" style="background:#fff;">
+                <h4 style="background:#fff;text-align:center;"> <br> <b>JYOTI</b><br> </h4>
+                <div style="text-align:center;"><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span></div>
+                <div style="text-align:center;">
+                    <h5>It becomes more easier to avail two-wheeler service at doorstep because people are working from home and they avoid going out.</h5>
+                </div>
+
+
+                &emsp;
+            </div>
+        </div>
+        <div class="item" style="background:#fff;">
+
+            <div class="text-co" style="background:#fff;">
+                <h4 style="background:#fff;text-align:center;"> <br> <b>KETAN KOTHARI</b><br> </h4>
+                <div style="text-align:center;"><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span></div>
+                <div style="text-align:center;">
+                    <h5> Getting my two-wheeler serviced by TWN was really helpful and it is ver cost-effective, so I recommend others too.</h5>
+                </div>
+
+
+                &emsp;
+            </div>
+            <BR>
+            <BR>
+        </div>
+
+
+
+
+    </div>
+    <br>
+
+
+
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content" action="/action_page.php">
+            <div class="container">
+                <h1>Choose Your Preference</h1>
+                <p>--</p>
+
+                <div class="clearfix">
+                    <a href="/forms" type="button" class="cancelbtn"><b>PICK UP & DROP</b></a>
+                    <a href="/forms" type="button" class="deletebtn"><b>IN STORE VISIT</b></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

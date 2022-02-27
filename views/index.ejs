@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <!-- Basic Page Needs
+        ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>TWN</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="plugins/animate-css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="plugins/slider/slider.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css">
+    <!-- hover -->
+    <link rel="stylesheet" href="plugins/hover/hover-min.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+
+    <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+    <section class="top-bar animated-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/TWN Logo.jpg" alt="logo" style="width: 100px;">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about">About</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Service
+                                </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/services_2wheeler">2 Wheeler</a>
+                                        <a class="dropdown-item" href="/services_4wheeler">4 Wheeler</a>
+
+                                    </div>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/why">Why TWN?</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/blog">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact">Contact</a>
+                                </li>
+
+                                <% if(!locals.user){ %>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/login"><i class="fas fa-user" style="color: black;"></i>  Login/Sign up</a>
+                                    </li>
+                                    <% } %>
+
+
+
+
+                                        <li class="nav-item">
+                                            <h3 style="color: #444 !important;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    transition: .3s all;
+                                    text-transform: uppercase;
+                                    padding: 5px 15px;
+                                    display: block;">
+                                                <% if(locals.user){ %>
+                                                    <%= user.name %>
+                                                        <% } %>
+                                            </h3>
+                                        </li>
+
+
+                                        <li class="nav-item">
+                                            <i>
+                                        <img src="<% if(locals.user){ %>
+                                            <%= user.picture %>
+                                                <% } %>" style="height: 25px; width: 25px;" alt="">
+                                    </i>
+
+                                        </li>
+
+
+
+                                        <% if(locals.user){ %>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/logout"><i class="fas fa-user" style="color: black;"></i> Logout</a>
+                                            </li>
+
+                                            <% } %>
+
+
+
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <body onload="getLocation()"></body>
+
+
+
+    <!--
+==================================================
+Slider Section Start
+================================================== -->
+
+    <!--/#main-slider-->
+
+    <section class="pt-6 bg-600" id="home">
+        <br>
+        <br>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 col-lg-6 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="/img/blog/post-1.jpg" width="470" height: "400" alt="hero-header" style="padding-bottom: :100px;" /></div>
+                <div class="col-md-7 col-lg-6 text-md-start text-center py-6">
+                    <h1>
+
+
+
+                    </h1>
+
+
+                    <h1 class="fs-6 fs-xl-7 mb-5" STYLE="FLOAT:LEFT;"><b>GET YOUR VEHICLE FIXED ANYWHERE IN BANGALORE NOW! </b></h1>
+                    <h4 class="fw-bold font-sans-serif" STYLE="FLOAT:LEFT;"> Book with a TWN verified workshops anywhere in Bangalore & enjoy multiple other benefits<br></h4><br>
+                    <br>
+                    <a class="btn btnf btn-primary me-2" href="/services_2wheeler" role="button"><i class="fas fa-motorcycle"></i></a>&emsp;&emsp;
+                    <a class="btn btnf btn-outline-secondary" href="/services_4wheeler" role="button">
+                        <i class="ion-model-s"></i>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+    </section>
+    <!--/#main-slider-->
+
+
+    <!--
+==================================================
+About Section Start
+================================================== -->
+
+
+    <section class="company-description">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6  wow fadeInLeft">
+                    <div class="block">
+
+                        <h3 class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">ABOUT US</h3>
+                        <p class="wow fadeInUp" data-wow-delay=".5s" data-wow-duration="500ms">
+
+
+                            <p>
+                                We started The Wheels Nation (TWN) to change the auto service industry. Our ultimate goal is to connect customers with the best auto repair shops which are pre verified and also provides free pick up and drop service.</p> <br><br><b style="text-transform: uppercase;color:#041c3c;text-align:center;">" Now  getting  your  vehicle fixed is
+                                made easy like never before. "</b>
+
+                              </p>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-6" data-wow-delay=".3s">
+                    <br><br><img src="img/home.gif" style=" border-radius: 25px;" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <!-- /#about -->
+    <br>
+    <div class="section-heading">
+
+        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">sERVICES</h2>
+
+
+    </div>
+
+    <div class="owl-carousel owl-theme">
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demo.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">GENERAL SERVICE</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demo2.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">PREMIUM SERVICE</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demo3.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">GENERAL PRO SERVICE</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demooil.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">ENGINE OIL & FILTER CHANGE</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demoty.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">TYRE PUNCTURE</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demow.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">WASHING</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/democust.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">CUSTOMISED SERVICE</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+        <div class="item" style="background-color:#fff;">
+            <a href="service.html"><img src="img/demop.jpg" style="border-radius:50%;width:150px;height:150px;display: block;margin-left: auto;margin-right: auto;"></a>
+            <div class="text-co">
+                <h4 style="text-align:center;">PAINTING</h4>
+                <span>&emsp;</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!--
+==================================================
+Portfolio Section Start
+================================================== -->
+
+    <!-- #works -->
+    <!--
+==================================================
+Portfolio Section Start
+================================================== -->
+    <section id="feature">
+        <div class="container">
+            <div class="section-heading">
+
+                <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Why Choose Us</h2>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-ios-home"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">QUICK & EASY</h4>
+                            <p>Book from any mechanic near to you based on their previous reviews and experience for a hassle free experience </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-ribbon-b"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">PICKUP & DROP</h4>
+                            <p>Get a free pick up and drop to avoid long waiting hours at garage </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-settings"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">WARRANTY</h4>
+                            <p>Get 7 days warranty on your service as we don’t transfer your payments to mechanics till the 7th day or before you give us a confirmation </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1200ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-card"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">TRUST & SAFETY</h4>
+                            <p>Now you finally know from whom you are getting your vehicle fixed , attention to values and ethics are very important to us</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-ios-heart"></i>
+
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">TROUBLE-FREE PAYMENTS</h4>
+                            <p>No confusion & billing options available which are suitable for every one of our customer . Choose among credit or debit cards , UPI & paytm </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1800ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-cash"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SUPPORT</h4>
+                            <p>Get support from our dedicated team who are always available to assist you </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- /#feature -->
+
+    <div class="section-heading">
+
+        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">HOW DO WE ONBOARD MECHANICS ?</h2>
+    </div>
+
+    <section>
+        <P STYLE="COLOR:BLACK;TEXT-ALIGN:CENTER;FONT-WEIGHT:400;">We know that its really hard to find a right mechanic to fix your vehicle .
+            <BR>Don’t worry we got you covered & here is how we verify them </P>
+        <BR>
+        <!--/.bg-holder-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img src="IMG/EXPCKECK.JPG" height="100" alt="..." />
+                    <h1 class="my-2"></h1>
+                    <p class="text-info fw-bold" style="color:black;font-weight: 400;">Experience check</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img src="IMG/RATINGS.JPG" height="100" alt="..." />
+                    <h1 class="my-2"></h1>
+                    <p class="text-info fw-bold" style="color:black;font-weight: 400;">Previous reviews to ensure high quality service & higher satisfaction</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img src="IMG/COST1.JPG" height="100" alt="..." />
+                    <h1 class="my-2"></h1>
+                    <p class="text-info fw-bold" style="color:black;font-weight: 400;">Check actual repair cost to ensure fair pricing</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center mb-5"><img src="IMG/VERIFIED MECH.JPG" height="100" alt="..." />
+                    <h1 class="my-2"></h1>
+                    <p class="text-info fw-bold" style="color:black;font-weight: 400;">Onboard as a verified mechanic</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <BR>
+
+
+    <div class="section-heading">
+
+        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">cUSTOMER sPEAKS</h2>
+    </div>
+
+
+    <div class="vidhi owl-carousel owl-theme">
+        <div class="item" style="background:#fff;">
+            <img src="IMG/person3.png" style="width:150px;height:150px;border-radius:50%; display: block;margin-left: auto;margin-right: auto; padding-top: 5px;  padding-bottom: 5px;">
+            <div class="text-co" style="background:#fff;">
+                <h4 style="background:#fff;text-align:center;"> <br> <b>HARISH N</b><br><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span><br><br><span style="color:#041c3c ">"</span> Very happy with the sevice, the technician was very polite <span>"</span>
+                    <br><br>
+
+                    <br> <br>
+                </h4>
+                &emsp;
+            </div>
+        </div>
+        <div class="item" style="background:#fff;">
+            <img src="IMG/person2.png" style="width:150px;height:150px;border-radius:50%; display: block;margin-left: auto;margin-right: auto; padding-top: 5px;  padding-bottom: 5px;">
+            <div class="text-co">
+                <h4 style="background:#fff;text-align:center;"><br><b>JYOTI</b><br><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span> <br> <br><span style="color:#041c3c ">"</span> It becomes more easier to avail two-wheeler service at doorstep because people are working from home and they avoid going out. <span>"</span>
+                    <br><br>
+
+                </h4>
+                &emsp;
+            </div>
+        </div>
+        <div class="item" style="background:#fff;">
+            <img src="IMG/person3.png" style="width:150px;height:150px;border-radius:50%; display: block;margin-left: auto;margin-right: auto; padding-top: 5px;  padding-bottom: 5px;">
+            <div class="text-co">
+                <h4 style="background:#fff;text-align:center;"> <br><b>SAHIL BANTIA</b><br><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span> <br> <br><span style="color:#041c3c ">"</span> Service was done neatly and it was worth paying the amount then at any other service center <span>"</span>
+
+
+                    <br><br><br>
+                </h4>
+                &emsp;
+            </div>
+        </div>
+        <div class="item" style="background:#fff;">
+            <img src="IMG/person4.png" style="width:150px;height:150px;border-radius:50%; display: block;margin-left: auto;margin-right: auto; padding-top: 5px;  padding-bottom: 5px;background:#fff;">
+            <div class="text-co">
+                <h4 style="background:#fff;text-align:center;"><br><b>KETAN KOTHARI</b><br><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span> <br> <br><span style="color:#041c3c ">"</span> Getting my two-wheeler serviced by TWN was really helpful and it is ver cost-effective, so I recommend others too. <span>"</span>
+                    <br><br>
+
+                </h4>
+                &emsp;
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="row" style="display: block;">
+                <div class="col-md-6 mb-5 mb-md-0" style="max-width: 100%;">
+                    <div class="block">
+                        <div class="section-heading">
+
+                            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Feedback / Collaboration / Suggestion</h2>
+                        </div>
+
+
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                        </p>
+                        <div class="contact-form">
+                            <form method="POST" action="/api/contacts" role="form">
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                                    <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                                    <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+                                </div>
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                                    <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+                                </div>
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                                    <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
+                                </div>
+
+                                <div id="success" class="success">
+                                    Thank you. The Mailman is on His Way :)
+                                </div>
+
+                                <div id="error" class="error">
+                                    Sorry, don't know what happened. Try later :(
+                                </div>
+
+
+                                <div class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                                    <button type="submit" style="float: right;" class="btnn-left value=" Send Message ">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row address-details ">
+
+
+                </div>
+            </div>
+        </section>
+  <p id="demo "></p>
+
+        <!-- include header -->
+        <%- include('includes/_footer') %>
+            <!-- /include header -->

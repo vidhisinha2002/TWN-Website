@@ -1,0 +1,95 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+    <!--
+        ==================================================
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>Blog</h2>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i> Home &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">Blog</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--=======================================
+=            Blog Left sidebar            =
+========================================-->
+
+    <section id="blog-full-width">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <div class="recent-post widget">
+                            <h3>Recent Posts</h3>
+                            <ol>
+                                <% for(var i = 0; i < users.length; i++) { %>
+                                    <li>
+                                        <a href="/post-page?id=<%= users[i]._id%>" style="color:#041c3c;">
+                                            <%= users[i].title %>
+                                        </a><br>
+
+                                    </li>
+                                    <% } %>
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <% for(var i = 0; i < users.length; i++) { %>
+                        <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                            <div class="blog-post-image">
+                                <img class="img-fluid" src="upload/<%= users[i].image %>" alt="no image available" /></a>
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blogpost-title">
+                                    <a href="/post-page?id=<%= users[i]._id%>">
+                                        <%= users[i].title %>
+                                    </a>
+                                </h2>
+                                <h3 class="blogpost-title">
+                                    <a href="/post-page?id=<%= users[i]._id%>" style="color:#041c3c;">
+                                        <%= users[i].tagline %>
+                                    </a>
+                                </h3>
+                                <div class="blog-meta">
+
+                                    <span>Date : <%= users[i].date %></span>
+
+                                </div>
+                                <p>
+                                    <%= users[i].paragraph_1.slice(0,500)%>...<br>
+                                        <a href="/post-page?id=<%= users[i]._id%>" class="btn btn-dafault btn-details ">Continue Reading</a>
+                            </div>
+                        </article>
+                        <% } %>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====  End of Blog Left sidebar  ====-->
+
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

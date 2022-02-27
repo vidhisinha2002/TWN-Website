@@ -1,0 +1,154 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>Customised Service</h2>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i> Home &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">Customised Service</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+==================================================
+    Contact Section Start
+================================================== -->
+    <section id="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <div class="block">
+                        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">let us know what you exactly need</h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                        </p>
+                        <div class="contact-form">
+                            <form method="POST" action="/api/contacts" role="form">
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                                    <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                                    <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                                    <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                                    <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
+                                </div>
+
+                                <div id="success" class="success">
+                                    Thank you. The Mailman is on His Way :)
+                                </div>
+
+                                <div id="error" class="error">
+                                    Sorry, don't know what happened. Try later :(
+                                </div>
+
+                                <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                                    <button type="submit" id="contact-submit" class="btnn-left" value="Send Message">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-area">
+                        <br> <br> <br>
+
+                        <div class="map">
+                            <img src="img/custom.png" style=" border-radius: 25px;" alt="" class="img-fluid">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" type="button">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                GENERAL SERVICE : (BELOW 150 CC )
+                <span class="close">&times;</span>
+
+            </div>
+            <div class="modal-body">
+                <p><b>1. ENGINE OIL</b> - check level and condition if required drain and replace <br><b>2.
+AIR FILTER</b> - Check and clean air filter <br><b> 3. GEAR OIL</b> - Check level and condition If required top- up <br><b> 4. BRAKE FLUID </b>- Check level and condition If required top-up <br><b> 5.
+GREASE </b>- Levers Clean and apply grease <br><b>6. FUEL FILTER </b>- Check and clean for the free flow of petrol , if required <br> <b>7. SPARK PLUG </b>- Clean and check condition, gap and adjust if neccessary <br> <b>8. CARBURETTOR </b>- Basic cleaning
+                    ,check idle speed and choke lever operation <br><b> 9. BRAKES </b>- Check both front and rear, adjust if required <br><b> 10. CLUTCH </b>- Check tightness and oiling if neccessary <br><b> 11. CHAIN </b>- Clean and check chain slack
+                    and lubricate if neccessary <br><b> 12. NUTS AND BOLTS </b>- Tightening and replacement of nuts and bolts if required <br><b>13. CONTROL CABELS </b>- Basic operation of clutch, throttle and front brake readjust, replace if required
+                    <br><b>14. ELECTRICALS </b>- Check head, tail, parking bulbs, horns and indicators <br><b>15. VIBRATION</b> - Feel for any unusual vibration in the Bikes <br><b>16 BREAK
+LINER</b> - Check thickness and condition <br><b>17. OIL FILTER </b>- Check ,clean or replace if required <br><b> 18. STEARING PLAY </b>- Check and adjust fork cone set if required</p>
+
+            </div>
+            <div class="modal-footer">
+                <br>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

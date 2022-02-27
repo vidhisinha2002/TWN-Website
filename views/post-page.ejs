@@ -1,0 +1,80 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+
+    <!--
+==================================================
+Global Page Section Start
+================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>
+                            <%= user.title %>
+                        </h2>
+                        <div class="portfolio-meta">
+                            <h3>
+                                <%= user.tagline %>
+                            </h3>
+                            <h4>
+                                <%= user.date %>
+
+                            </h4>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#Page header-->
+
+
+    <section class="single-post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="post-img" style="display: flex; justify-content: center;">
+                        <img class="img-fluid" alt="" src="upload/<%= user.image %>">
+                    </div>
+                    <div class="post-content">
+                        <h2 style="text-align: center;">
+                            <%= user.title %>
+                        </h2>
+                        <br>
+                        <p>
+                            <%= user.paragraph_1 %>
+                        </p>
+                        <br>
+                        <p>
+                            <%= user.paragraph_2 %>
+                        </p>
+                        <br>
+                        <p>
+                            <%= user.paragraph_3 %>
+                        </p>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

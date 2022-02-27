@@ -1,0 +1,79 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/admin_dashboard"><i class="fas fa-angle-double-left"></i> Back to dashboard</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">New Blog</h2>
+                <span class="text-light">Use the below form to create a new Blog</span>
+            </div>
+
+            <!-- add user form -->
+            <!-- form handling -->
+            <form action="/api/users" method="POST" id="add_user" enctype="multipart/form-data">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Title</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="title" value="" placeholder="title of your blog" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Tagline</label>
+                        <input type="text" name="tagline" value="" placeholder="tagline of your blog" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Date</label>
+                        <input type="text" name="date" value="" placeholder="Date of your blog" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-1" class="text-light">Paragraph-1</label>
+                        <textarea name="paragraph_1" id="paragraph-1" cols="30" rows="10" required></textarea>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="paragraph-2" class="text-light">Paragraph-2</label>
+                        <textarea name="paragraph_2" id="paragraph-2" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Paragraph-3</label>
+                        <textarea name="paragraph_3" id="paragraph-3" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraph-3" class="text-light">Image</label>
+                        <input type="file" name="avatar" required />
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+                    <div>
+
+                    </div>
+
+
+
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

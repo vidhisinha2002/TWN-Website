@@ -1,0 +1,157 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+    <main id="site-main">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <h2 style="text-align: center;">Blog section</h2>
+            <div class="box-nav d-flex justify-between">
+
+                <a href="/add-blog" class="border-shadow">
+                    <span class="text-gradient">New Blog <i class="fas fa-blog"></i></span>
+                </a>
+            </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <div class="scrollitt">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Tagline</th>
+                                <th>Date</th>
+
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i < users.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].title %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].tagline %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].date %>
+                                    </td>
+
+                                    <td>
+                                        <a href="/update-blog?id=<%= users[i]._id%>" class="btn btn-white border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a class="btn btn-white border-shadow delete" data-id=<%=users[i]._id %> >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <br>
+    <br>
+    <div class="container">
+        <h2 style="text-align: center;">Service provider section</h2>
+        <div class="box-nav d-flex justify-between">
+
+            <a href="/add-serviceprovider" class="border-shadow">
+                <span class="text-gradient">Add New Service provider <i class="fas fa-blog"></i></span>
+            </a>
+        </div>
+        <br>
+        <br>
+
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+
+
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < serviceproviderlist.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= i + 1 %>
+                            </td>
+                            <td>
+                                <%= serviceproviderlist[i].vendor_name %>
+                            </td>
+
+                            <td>
+                                <!-- <a href="/update-serviceprovider?id=<%= serviceproviderlist[i]._id%>" class="btn btn-white border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a> -->
+                                <a class="btn btn-white border-shadow delete1" id="delete_serviceprovider" data-id=<%=serviceproviderlist[i]._id %>  >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <br>
+    <br>
+    <h2 style="text-align: center;">Contacts section</h2>
+    <br>
+    <div class="scrollit">
+        <table class="table table_contact">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < contacts.length; i++) { %>
+                    <tr class="contact_row">
+                        <td>
+                            <%= i + 1 %>
+                        </td>
+                        <td>
+                            <%= contacts[i].name %>
+                        </td>
+                        <td>
+                            <%= contacts[i].email %>
+                        </td>
+                        <td>
+                            <%= contacts[i].subject %>
+                        </td>
+                        <td class="message">
+                            <%= contacts[i].message %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+
+
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

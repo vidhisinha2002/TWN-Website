@@ -1,0 +1,177 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+
+    <!--
+        ==================================================
+            Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>service providers list</h2>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i> Home &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">Service Providers</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!--
+==================================================
+    Works Section Start
+================================================== -->
+    <!--
+    <section id="blog-full-width">
+        <div class="container">
+            <div class="row">
+                <% for(var i = 0; i < user.length; i++) { %>
+
+
+                    <div class="col-md-4">
+                        <div class="sidebar">
+
+
+
+
+                            <div class="recent-post widget">
+                                <div>
+                                    <img src="upload/<%= user[i].image_technician[0] %>" alt="" style="width: 200px;">
+                                </div>
+                                <h2>
+                                    <%= user[i].vendor_name %>
+                                </h2>
+                                <ul>
+
+                                    <li>
+                                        <a href="service-provider-details.html">
+
+                                        </a><br>
+
+                                    </li>
+                                    <a href="/service-provider-details?id=<%= user[i]._id%>"><button type="submit">Select</button></a>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+
+
+
+            </div>
+        </div>
+    </section> -->
+    <section id="blog-full-width">
+        <div class="container">
+            <div class="row" style="justify-content: center;">
+                <h1 style="color: red;">
+                    <%= message %>
+                </h1>
+
+                <div class="col-md-8">
+
+                    <% for(var i = 0; i < user.length; i++) { %>
+                        <!-- <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                            <div class="blog-post-image">
+                                <img class="img-fluid" src="upload/<%= user[i].image_technician[0] %>" alt="no image available" /></a>
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blogpost-title">
+                                    <a href="">
+
+                                    </a>
+                                </h2>
+                                <h3 class="blogpost-title">
+                                    <a href="">
+
+                                    </a>
+                                </h3>
+                                <div class="blog-meta">
+
+                                    <span></span>
+
+                                </div>
+                                <p>
+                                    <br>
+                                    <a href="/service-provider-details?id=<%= user[i]._id%>" class="btn btn-dafault btn-details hvr-bounce-to-right">Select</a>
+                            </div>
+                        </article> -->
+                        <br>
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 mt-3">
+                                    <div class="card1">
+                                        <div class="card-horizontal">
+                                            <div class="img-square-wrapper" style="padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+                                                <img class="" style="width: 100px; height: 100px;border-radius:50%;" src="upload/<%= user[i].image_technician[0] %>" alt="Card image cap">
+
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <%= user[i].vendor_name %>
+                                                </h4>
+
+                                            </div>
+                                            <div class="card-body">
+                                                <a href="/service-provider-details?id=<%= user[i]._id%>"><button class="btnn btnn-new" style="border-radius:5px;">Select</button></a>
+
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+
+                                            <small class="text-muted"><i class="ion-map" style="color:#041c3c;"></i> DISTANCE : 5.8 KM</small>
+                                            <br>
+                                            <small class="text-muted"> <i class="ion-ios-clock" style="color:#041c3c;"></i> TIMINGS : 9AM - 10PM</small>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <% } %>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        console.log(user.length)
+        if (user) {
+            document.getElementById('message').innerHTML = "There's no vendor for this service";
+
+        }
+    </script>
+
+
+
+
+
+
+
+    <!-- include footer -->
+    <%- include('includes/_footer') %>
+        <!-- /include footer -->

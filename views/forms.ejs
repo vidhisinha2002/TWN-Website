@@ -1,0 +1,386 @@
+<!-- include header -->
+<%- include('includes/_header') %>
+    <!-- /include header -->
+
+
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>Customer and vehicle details</h2>
+                        <ol class="breadcrumb list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i> Home &nbsp; &nbsp;/
+                                </a>
+                            </li>
+                            <li class="active list-inline-item">Customer And Vehicle Details</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: #1da1f2;
+            transition: .5s ease;
+        }
+
+        a:hover {
+            color: #0080ff;
+        }
+
+        .form {
+            background: rgb(10 9 30 / 90%);
+            padding: 40px;
+            max-width: 546px;
+            margin: 40px auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px 4px rgb(19 35 47 / 30%);
+            background-color: #ffffff;
+            border-radius: 20px;
+
+
+        }
+
+        .top-area {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .top-area:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .top-area li a {
+            display: block;
+            text-decoration: none;
+            padding: 15px;
+            background: rgba(160, 179, 176, 0.25);
+            color: #a0b3b0;
+            font-size: 20px;
+            float: left;
+            width: 44%;
+            text-align: center;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+        .top-area li a:hover {
+            background: #b10b1f;
+            color: #ffffff;
+        }
+
+        .top-area .active a {
+            background: #041c3c;
+            color: #ffffff;
+        }
+
+        .tab-content>div:last-child {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            font-weight: 300;
+        }
+
+        label {
+            transform: translateY(6px);
+            left: 13px;
+            /* color: rgba(255, 255, 255, 0.5); */
+            transition: all 0.25s ease;
+            pointer-events: none;
+            font-size: 22px;
+            font-family: 'Manjari', sans-serif;
+            padding-right: 10px;
+            color: #fff;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        label .req {
+            margin: 2px;
+            color: #1da1f2;
+        }
+
+        label.active {
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+            left: 2px;
+            font-size: 14px;
+        }
+
+        label.active .req {
+            opacity: 0;
+        }
+
+        label.highlight {
+            color: #ffffff;
+        }
+
+
+
+        input:focus,
+        textarea:focus {
+            outline: 0;
+            border-color: #b10b1f;
+        }
+
+        textarea {
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+            border-radius: 4px;
+        }
+
+        .label-field {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .top-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .top-row>div {
+            float: left;
+            width: 48%;
+            margin-right: 4%;
+        }
+
+        .top-row>div:last-child {
+            margin: 0;
+        }
+
+        .button {
+            border: 0;
+            outline: none;
+            border-radius: 0;
+            padding: 15px 0;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            background: #1da1f2;
+            color: #ffffff;
+            transition: all 0.5s ease;
+            -webkit-appearance: none;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #0080ff;
+        }
+
+        .button-block {
+            display: block;
+            width: 100%;
+        }
+
+        .forgot {
+            margin-top: -20px;
+            text-align: right;
+        }
+
+        @media (max-width: 765px) {
+            label {
+                left: 0;
+            }
+        }
+
+        .fileUpload {
+            background: #1da1f2;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            /*20px/16px 0*/
+            overflow: hidden;
+            padding: 0.875em;
+            /*14px/16px*/
+            position: relative;
+            text-align: center;
+            width: 120px;
+            cursor: pointer;
+        }
+
+        .fileUpload:hover,
+        .fileUpload:active,
+        .fileUpload:focus {
+            background: #3868cd;
+            cursor: pointer;
+        }
+
+        .fileUpload input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            width: 148px;
+            height: 46px;
+            cursor: pointer;
+        }
+
+        input[type="file"] {
+            position: fixed;
+            right: 100%;
+            bottom: 100%;
+        }
+
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .upper {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .btn_submit {
+            background-color: #b10b1f;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            /* display: inline-block; */
+            font-size: 16px;
+            /* margin: auto; */
+            display: block;
+            margin: auto;
+            margin-top: 28px;
+        }
+        .btn_submit:hover {
+          background-color: #041c3c;
+        }
+        button:disabled,
+        button:hover[disabled]{
+          border: 1px solid #999999;
+          background-color: #cccccc;
+          color: #666666;
+        }
+        button:disabled,
+        button[disabled]{
+          border: 1px solid #999999;
+          background-color: #cccccc;
+          color: #666666;
+        }
+    </style>
+        <div class="form" >
+
+
+
+            <div class="tab-content">
+                <div id="signup">
+                    <h1><b>DETAILS</b></h1>
+                    <div class="card-body">
+
+                        <form id="formid" method="POST" action="/api/login_customer">
+
+
+
+
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                                  <input type="text" placeholder="Name*" class="form-control" name="name" id="name" required>
+                              </div>
+
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                                  <input type="email" placeholder="Email*" class="form-control" name="email" id="email" required>
+                              </div>
+
+
+
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.0s">
+                                  <input type="text" placeholder="Contact Number*" class="form-control" name="no" id="no" required>
+                              </div>
+
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                                  <textarea rows="5" placeholder="Address*" class="form-control" name="add" id="add" required></textarea>
+                              </div>
+
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                              <input type="text" placeholder="Date and Time"  onfocus="(this.type='datetime-local')" class="form-control" required>
+                          </div>
+
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.6s">
+                                  <input type="text" placeholder="Bike Name*" class="form-control" name="bname" id="bname" required>
+                              </div>
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.8s">
+                                  <input type="text" placeholder="Brand Name*" class="form-control" name="brandname" id="brandname" required>
+                              </div>
+                              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="2.0s">
+                                  <input type="text" placeholder="Registration No." class="form-control" name="reg" id="reg">
+                              </div>
+
+
+
+
+
+                            <button  type="submit" class="btn_submit" id="formsubmit" onclick="document.getElementById('id02').style.display='block'" disabled> Select Payment Option</button>
+
+
+
+                        </form>
+
+                    </div>
+
+
+
+                </div>
+
+                <div id="login">
+
+                    <div class="card-body">
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+            <div id="id02" class="modal">
+              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+              <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                  <h1>Choose Payment Type</h1>
+
+                  <div class="clearfix">
+                    <a href="/forms" type="button"  class="cancelbtn"><b>PAY PARTIALLY</b></a>
+                    <a href="/forms" type="button"  class="deletebtn"><b>PAY COMPLETELY</b></a>
+                  </div><BR>
+                  <h4><p>NOTE: In case of partial payment, this amount will we reduced from the total billing amount.</p></h4>
+                </div>
+              </form>
+            </div>
+
+
+
+
+                 <!-- include footer -->
+                <%- include('includes/_footer') %>
+                    <!-- /include footer -->
