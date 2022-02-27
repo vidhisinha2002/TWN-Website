@@ -60,7 +60,5 @@ Start the server
 ```bash
   npm start
 ```
-## Support
 
-For support, send messsage on https://nstuts.codes/contact.
 
